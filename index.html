@@ -1,7 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        /* Reset margins and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set the background color and size */
+        body {
+            background-color: #2F2F2F; /* Space gray background */
+            color: #FFF; /* White text color */
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style the card container */
+        .card {
+            background-color: #333;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Style the heading */
+        .card h1 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #FFF;
+        }
+
+        /* Style the paragraph */
+        .card p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #CCC;
+        }
+
+        /* Style the social media links */
+        .card a {
+            text-decoration: none;
+            color: #1E90FF; /* DodgerBlue color for links */
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        /* Style for link hover effect */
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
-<h1>Hey I'm Evan!</h1>
-<p>I made this website in like 5 mins so bare with me. I am a software engineer working in case management software at the moment. Standby as I find the time to update this site more.</p>
+
+<div class="card">
+    <h1>Your Name</h1>
+    <p>Welcome to my personal website! Here you'll find links to my social media profiles, and more about what I do.</p>
+    <div>
+        <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+    </div>
+</div>
+
 </body>
 </html>
