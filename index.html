@@ -23,7 +23,7 @@
             max-width: 800px;
             height: 100%;
             overflow-y: auto;
-            padding-top: 150px; /* Space for buttons */
+            padding-top: 100px; /* Space for buttons */
         }
 
         .buttons-section {
@@ -32,17 +32,15 @@
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+            gap: 10px;
             z-index: 10; /* Ensure buttons are on top */
-            width: 200px; /* Ensure all buttons are the same width */
+            width: 100%; /* Make sure buttons take up the full width */
         }
 
         .button-link {
-            display: block;
-            width: 100%; /* Make all buttons the same width */
-            margin: 10px 0;
-            padding: 10px 0;
+            flex: 1; /* Ensure all buttons are the same size and take up equal space */
+            padding: 10px;
             background-color: #1E90FF;
             color: #FFF;
             text-decoration: none;
