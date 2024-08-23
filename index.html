@@ -19,16 +19,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .cards-wrapper {
             display: flex;
             gap: 30px; /* Space between cards */
+            flex-wrap: wrap;
         }
 
         .card-container {
-            width: 300px;
-            height: 400px;
+            width: 320px;
+            height: auto;
             position: relative;
             transform-style: preserve-3d;
             transform: rotateY(0deg);
@@ -106,6 +108,11 @@
         .button-link:hover {
             background-color: #000000;
         }
+
+        .card-content {
+            max-height: 400px; /* Ensures the text is scrollable if it overflows */
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body>
@@ -125,12 +132,12 @@
 
     <div class="card-container" id="card-container-2">
         <div class="card front">
-            <h1>About me</h1>
-            <p>I’m motivated by a genuine desire to be useful—starting with my family and extending out to my community, my country, and the planet. My journey began with a practical decision to join the military at a young age, knowing it would open up real opportunities for me. After leaving the service, I made the shift into tech by completing a full-stack web development bootcamp, which led to my first role as a software engineer. I’ve been building on that foundation ever since.
-
-                My strengths lie in communication and adaptability. I’ve been told I have a natural talent for speaking, but what really drives me is the work itself and the impact it has. My time in the military taught me the value of being a team player and staying flexible, skills that I apply every day in my career. I’m focused on continuous growth—not just for the sake of advancing, but to make tangible contributions that matter.
-                
-                Looking forward, I’m committed to evolving within the industry, with an eye toward leadership roles where I can make a real difference. My goals are grounded in finding solutions that genuinely progress humanity, whether that’s through developing sustainable energy systems or addressing issues of scarcity. It's not about how it looks; it’s about making things better in a way that truly counts.</p>
+            <h1>About Me</h1>
+            <div class="card-content">
+                <p>I’m motivated by a genuine desire to be useful—starting with my family and extending out to my community, my country, and the planet. My journey began with a practical decision to join the military at a young age, knowing it would open up real opportunities for me. After leaving the service, I made the shift into tech by completing a full-stack web development bootcamp, which led to my first role as a software engineer. I’ve been building on that foundation ever since.</p>
+                <p>My strengths lie in communication and adaptability. I’ve been told I have a natural talent for speaking, but what really drives me is the work itself and the impact it has. My time in the military taught me the value of being a team player and staying flexible, skills that I apply every day in my career. I’m focused on continuous growth—not just for the sake of advancing, but to make tangible contributions that matter.</p>
+                <p>Looking forward, I’m committed to evolving within the industry, with an eye toward leadership roles where I can make a real difference. My goals are grounded in finding solutions that genuinely progress humanity, whether that’s through developing sustainable energy systems or addressing issues of scarcity. It's not about how it looks; it’s about making things better in a way that truly counts.</p>
+            </div>
         </div>
     </div>
 </div>
