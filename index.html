@@ -17,80 +17,19 @@
             font-family: Arial, sans-serif;
             height: 100vh;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
+            overflow: hidden; /* Prevents scrolling if content overflows */
         }
 
-        .cards-wrapper {
-            display: flex;
-            gap: 30px; /* Space between cards */
-            flex-wrap: wrap;
-        }
-
-        .card-container {
-            width: 320px;
-            height: auto;
-            position: relative;
-            transform-style: preserve-3d;
-            transform: rotateY(0deg);
-            transition: transform 0.6s;
-        }
-
-        .card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #228B22; /* Green color for cards */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .card.front {
-            z-index: 2;
-        }
-
-
-        .card-container.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .card-container:hover .card {
-            background-color: #32CD32; /* Brighter green on hover */
-            transform: translateY(-10px); /* Move card upwards on hover */
-        }
-
-        .card h1 {
-            margin-bottom: 15px;
-            font-size: 24px;
-            color: #FFF;
-        }
-
-        .card p {
-            margin-bottom: 20px;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #CCC;
-        }
-
-        /* .card a {
-            text-decoration: none;
-            color: #000000;
-            margin: 0 10px;
+        .typing-section {
+            width: 60%;
             font-size: 18px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for typing effect */
         }
-
-        .card a:hover {
-            text-decoration: underline;
-        } */
 
         .button-link {
             display: block;
@@ -116,30 +55,39 @@
 </head>
 <body>
 
-<div class="cards-wrapper">
-    <div class="card-container" id="card-container-1">
-        <div class="card front">
-            <div>
-                <a href="https://twitter.com/yourprofile" target="_blank" class="button-link">Twitter</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="button-link">LinkedIn</a>
-                <a href="https://github.com/yourprofile" target="_blank" class="button-link">GitHub</a>
-                <a href="mailto:your.email@example.com" target="_blank" class="button-link">Email</a>
-                <a href="Evan_Williams_resume.pdf" download="Evan_Williams_resume.pdf" class="button-link">Download My Resume</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card-container" id="card-container-2">
-        <div class="card front">
-            <h1>About Me</h1>
-            <div class="card-content">
-                <p>I’m motivated by a genuine desire to be useful—starting with my family and extending out to my community, my country, and the planet. My journey began with a practical decision to join the military at a young age, knowing it would open up real opportunities for me. After leaving the service, I made the shift into tech by completing a full-stack web development bootcamp, which led to my first role as a software engineer. I’ve been building on that foundation ever since.</p>
-                <p>My strengths lie in communication and adaptability. I’ve been told I have a natural talent for speaking, but what really drives me is the work itself and the impact it has. My time in the military taught me the value of being a team player and staying flexible, skills that I apply every day in my career. I’m focused on continuous growth—not just for the sake of advancing, but to make tangible contributions that matter.</p>
-                <p>Looking forward, I’m committed to evolving within the industry, with an eye toward leadership roles where I can make a real difference. My goals are grounded in finding solutions that genuinely progress humanity, whether that’s through developing sustainable energy systems or addressing issues of scarcity. It's not about how it looks; it’s about making things better in a way that truly counts.</p>
-            </div>
-        </div>
-    </div>
+<div class="buttons-section">
+    <a href="https://twitter.com/yourprofile" target="_blank" class="button-link">Twitter</a>
+    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="button-link">LinkedIn</a>
+    <a href="https://github.com/yourprofile" target="_blank" class="button-link">GitHub</a>
+    <a href="mailto:your.email@example.com" class="button-link">Email</a>
+    <a href="Evan_Williams_resume.pdf" download="Evan_Williams_resume.pdf" class="button-link">Download My Resume</a>
+</div>ß
+    
+<div class="typing-section" id="typing-section">
+    <!-- The text will be typed here by JavaScript -->
 </div>
+
+<script>
+    const text = `I’m motivated by a genuine desire to be useful—starting with my family and extending out to my community, my country, and the planet. My journey began with a practical decision to join the military at a young age, knowing it would open up real opportunities for me. After leaving the service, I made the shift into tech by completing a full-stack web development bootcamp, which led to my first role as a software engineer. I’ve been building on that foundation ever since.
+    
+My strengths lie in communication and adaptability. I’ve been told I have a natural talent for speaking, but what really drives me is the work itself and the impact it has. My time in the military taught me the value of being a team player and staying flexible, skills that I apply every day in my career. I’m focused on continuous growth—not just for the sake of advancing, but to make tangible contributions that matter.
+
+Looking forward, I’m committed to evolving within the industry, with an eye toward leadership roles where I can make a real difference. My goals are grounded in finding solutions that genuinely progress humanity, whether that’s through developing sustainable energy systems or addressing issues of scarcity. It's not about how it looks; it’s about making things better in a way that truly counts.`;
+
+    let index = 0;
+    const typingSpeed = 50; // Speed of typing effect in milliseconds
+
+    function typeText() {
+        if (index < text.length) {
+            document.getElementById('typing-section').textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, typingSpeed);
+        }
+    }
+
+    // Start the typing effect
+    window.onload = typeText;
+</script>
 
 </body>
 </html>
