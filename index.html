@@ -13,33 +13,29 @@
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             padding: 20px;
         }
 
         .container {
-            position: relative;
+            display: flex;
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px;
             height: 100%;
             overflow-y: auto;
-            padding-top: 100px; /* Space for buttons */
+            padding: 20px;
         }
 
         .buttons-section {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             gap: 10px;
-            z-index: 10; /* Ensure buttons are on top */
-            width: 100%; /* Make sure buttons take up the full width */
+            width: 30%; /* Left side width for buttons */
+            padding-right: 20px;
         }
 
         .button-link {
-            flex: 1; /* Ensure all buttons are the same size and take up equal space */
             padding: 10px;
             background-color: #1E90FF;
             color: #FFF;
@@ -55,10 +51,12 @@
         }
 
         .typing-section {
+            width: 70%; /* Right side width for About Me text */
             font-size: 18px;
             line-height: 1.5;
             white-space: pre-wrap;
             font-family: 'Courier New', Courier, monospace; /* Monospace font for typing effect */
+            overflow-y: auto;
         }
 
         /* Media Query for smaller screens */
@@ -68,27 +66,24 @@
                 align-items: center;
             }
 
-            .buttons-section {
-                position: relative;
-                top: 0;
-                left: 0;
-                transform: none;
+            .container {
                 flex-direction: column;
+                padding-top: 0;
+                height: auto;
+            }
+
+            .buttons-section, .typing-section {
                 width: 100%;
-                gap: 10px;
+                padding: 0;
+            }
+
+            .buttons-section {
+                order: 1; /* Stack buttons on top */
                 margin-bottom: 20px; /* Space between buttons and text */
             }
 
-            .button-link {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .container {
-                padding-top: 0;
-                padding-bottom: 20px;
-                height: auto;
+            .typing-section {
+                order: 2; /* Stack text below buttons */
             }
         }
     </style>
