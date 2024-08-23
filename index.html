@@ -10,37 +10,34 @@
             color: #FFF;
             font-family: Arial, sans-serif;
             height: 100vh;
-            overflow: hidden;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            height: 100%;
-            overflow-y: auto;
-            padding-top: 100px; /* Space for buttons */
+            overflow: hidden; /* Prevents scrolling if content overflows */
         }
 
         .buttons-section {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 10px;
-            z-index: 10; /* Ensure buttons are on top */
-            width: 100%; /* Make sure buttons take up the full width */
+            align-items: flex-start;
+            width: 30%;
+        }
+
+        .typing-section {
+            width: 60%;
+            font-size: 18px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for typing effect */
         }
 
         .button-link {
-            flex: 1; /* Ensure all buttons are the same size and take up equal space */
-            padding: 10px;
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px 20px;
             background-color: #1E90FF;
             color: #FFF;
             text-decoration: none;
@@ -52,13 +49,6 @@
 
         .button-link:hover {
             background-color: #1C86EE;
-        }
-
-        .typing-section {
-            font-size: 18px;
-            line-height: 1.5;
-            white-space: pre-wrap;
-            font-family: 'Courier New', Courier, monospace; /* Monospace font for typing effect */
         }
     </style>
 </head>
