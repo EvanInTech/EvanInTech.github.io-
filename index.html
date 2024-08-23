@@ -118,5 +118,11 @@
     <p>Hello! I'm Evan Williams, a web developer with a passion for creating interactive and dynamic web experiences. I specialize in front-end development and enjoy bringing ideas to life in the browser.</p>
 </div>
 
+<script>
+    const cardContainer = document.getElementById('card-container');
+    cardContainer.addEventListener('click', function() {
+        cardContainer.classList.toggle('flipped');
+    });
+</script>
 </body>
 </html>
