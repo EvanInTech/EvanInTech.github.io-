@@ -5,43 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
-        /* Reset margins and padding for all elements */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Set the background color and size */
         body {
-            background-color: #2F2F2F; /* Space gray background */
-            color: #FFF; /* White text color */
+            background-color: #2F2F2F;
+            color: #FFF;
             font-family: Arial, sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            perspective: 1000px; /* Perspective for the 3D effect */
         }
 
-        /* Style the card container */
+        .card-container {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
+
         .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             background-color: #333;
-            padding: 20px 40px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             text-align: center;
-            max-width: 400px;
-            width: 100%;
         }
 
-        /* Style the heading */
+        .card.front {
+            z-index: 2;
+        }
+
+        .card.back {
+            transform: rotateY(180deg);
+            z-index: 1;
+        }
+
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+
         .card h1 {
             margin-bottom: 15px;
             font-size: 24px;
             color: #FFF;
         }
 
-        /* Style the paragraph */
         .card p {
             margin-bottom: 20px;
             font-size: 16px;
@@ -49,15 +73,13 @@
             color: #CCC;
         }
 
-        /* Style the social media links */
         .card a {
             text-decoration: none;
-            color: #000000; /* DodgerBlue color for links */
+            color: #1E90FF;
             margin: 0 10px;
             font-size: 18px;
         }
 
-        /* Style for link hover effect */
         .card a:hover {
             text-decoration: underline;
         }
@@ -66,15 +88,15 @@
             display: block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #12803a;
-            color: #000000;
+            background-color: #1E90FF;
+            color: #FFF;
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
         }
 
         .download-link:hover {
-            background-color: #00d262;
+            background-color: #1C86EE;
         }
     </style>
 </head>
@@ -83,13 +105,17 @@
 <div class="card">
     <h1>Hey I'm Evan Williams!</h1>
     <p>Welcome to my personal website! I am a software engineer based in San Antonio Texas. Want to know more? Follow me and send me a message!</p>
-    <div>
+    <div class="card front">
         <a href="https://x.com/EvanInTech" target="_blank">𝕏</a>
         <a href="https://www.linkedin.com/in/evanwilliams75/" target="_blank">LinkedIn</a>
         <a href="https://github.com/EvanInTech" target="_blank">GitHub</a>
         <a href="mailto:evan.b.williams95@gmail.com">Email</a>
     </div>
     <a href="Evan_Williams_resume.pdf" download="Evan_Williams_resume.pdf" class="download-link">Download My Resume</a>
+</div>
+<div class="card back">
+    <h1>About Me</h1>
+    <p>Hello! I'm Evan Williams, a web developer with a passion for creating interactive and dynamic web experiences. I specialize in front-end development and enjoy bringing ideas to life in the browser.</p>
 </div>
 
 </body>
