@@ -90,19 +90,21 @@
             text-decoration: underline;
         }
 
-        .download-link {
+        .button-link {
             display: block;
-            margin-top: 20px;
+            width: 100%;
+            margin: 10px 0;
             padding: 10px 20px;
-            background-color: #ffffff;
-            color: #ffffff;
+            background-color: #00a53f;
+            color: #000000;
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
+            text-align: center;
         }
 
-        .download-link:hover {
-            background-color: #000000;
+        .button-link:hover {
+            background-color: #00ff00;
         }
     </style>
 </head>
@@ -114,12 +116,12 @@
             <h1>Your Name</h1>
             <p>Welcome to my personal website! Here you'll find links to my social media profiles, and more about what I do.</p>
             <div>
-                <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://twitter.com/yourprofile" target="_blank" class="button-link">Twitter</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="button-link">LinkedIn</a>
+                <a href="https://github.com/yourprofile" target="_blank" class="button-link">GitHub</a>
+                <a href="mailto:your.email@example.com" target="_blank" class="button-link">Email</a>
+                <a href="Evan_Williams_resume.pdf" download="Evan_Williams_resume.pdf" class="button-link">Download My Resume</a>
             </div>
-            <a href="Evan_Williams_resume.pdf" download="Evan_Williams_resume.pdf" class="download-link">Download My Resume</a>
         </div>
     </div>
 
