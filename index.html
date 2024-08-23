@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
-
-body {
+        body {
             background-color: #000; /* Black background */
             color: #FFF;
             font-family: Arial, sans-serif;
@@ -24,7 +23,7 @@ body {
             max-width: 800px;
             height: 100%;
             overflow-y: auto;
-            padding-top: 100px; /* Space for buttons */
+            padding-top: 150px; /* Space for buttons */
         }
 
         .buttons-section {
@@ -33,13 +32,17 @@ body {
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            align-items: center;
             z-index: 10; /* Ensure buttons are on top */
+            width: 200px; /* Ensure all buttons are the same width */
         }
 
         .button-link {
             display: block;
-            padding: 10px 20px;
+            width: 100%; /* Make all buttons the same width */
+            margin: 10px 0;
+            padding: 10px 0;
             background-color: #1E90FF;
             color: #FFF;
             text-decoration: none;
