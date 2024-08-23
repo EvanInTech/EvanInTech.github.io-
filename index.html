@@ -50,6 +50,36 @@
         .button-link:hover {
             background-color: #01e271;
         }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons-section {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                margin-bottom: 20px; /* Space between buttons and text */
+            }
+
+            .button-link {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .container {
+                padding-top: 0;
+                padding-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
