@@ -6,53 +6,58 @@
     <title>My Personal Website</title>
     <style>
 
-        body {
+body {
             background-color: #000; /* Black background */
             color: #FFF;
             font-family: Arial, sans-serif;
             height: 100vh;
+            overflow: hidden;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            align-items: flex-start;
             padding: 20px;
-            overflow: hidden; /* Prevents scrolling if content overflows */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            overflow-y: auto;
+            padding-top: 100px; /* Space for buttons */
         }
 
         .buttons-section {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            width: 30%;
-        }
-
-        .typing-section {
-            width: 60%;
-            font-size: 18px;
-            line-height: 1.5;
-            white-space: pre-wrap;
-            font-family: 'Courier New', Courier, monospace; /* Monospace font for typing effect */
+            gap: 10px;
+            z-index: 10; /* Ensure buttons are on top */
         }
 
         .button-link {
             display: block;
-            width: 100%;
-            margin: 10px 0;
             padding: 10px 20px;
-            background-color: #00a53f;
-            color: #000000;
+            background-color: #1E90FF;
+            color: #FFF;
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
             text-align: center;
+            transition: background-color 0.3s;
         }
 
         .button-link:hover {
-            background-color: #000000;
+            background-color: #1C86EE;
         }
 
-        .card-content {
-            max-height: 400px; /* Ensures the text is scrollable if it overflows */
+        .typing-section {
+            font-size: 18px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace; /* Monospace font for typing effect */
         }
     </style>
 </head>
