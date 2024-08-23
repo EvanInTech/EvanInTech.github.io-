@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
-        /* Reset margins and padding for all elements */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Set the background color and size */
         body {
-            background-color: #2F2F2F; /* Space gray background */
-            color: #FFF; /* White text color */
+            background-color: #000; /* Black background */
+            color: #FFF;
             font-family: Arial, sans-serif;
             height: 100vh;
             display: flex;
@@ -23,25 +21,61 @@
             align-items: center;
         }
 
-        /* Style the card container */
-        .card {
-            background-color: #333;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
+        .cards-wrapper {
+            display: flex;
+            gap: 30px; /* Space between cards */
         }
 
-        /* Style the heading */
+        .card-container {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
+
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #228B22; /* Green color for cards */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .card.front {
+            z-index: 2;
+        }
+
+        .card.back {
+            transform: rotateY(180deg);
+            z-index: 1;
+        }
+
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-container:hover .card {
+            background-color: #32CD32; /* Brighter green on hover */
+            transform: translateY(-10px); /* Move card upwards on hover */
+        }
+
         .card h1 {
             margin-bottom: 15px;
             font-size: 24px;
             color: #FFF;
         }
 
-        /* Style the paragraph */
         .card p {
             margin-bottom: 20px;
             font-size: 16px;
@@ -49,15 +83,13 @@
             color: #CCC;
         }
 
-        /* Style the social media links */
         .card a {
             text-decoration: none;
-            color: #000000; /* DodgerBlue color for links */
+            color: #1E90FF;
             margin: 0 10px;
             font-size: 18px;
         }
 
-        /* Style for link hover effect */
         .card a:hover {
             text-decoration: underline;
         }
@@ -66,31 +98,65 @@
             display: block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #12803a;
-            color: #000000;
+            background-color: #1E90FF;
+            color: #FFF;
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
         }
 
         .download-link:hover {
-            background-color: #00d262;
+            background-color: #1C86EE;
         }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <h1>Hey I'm Evan Williams!</h1>
-    <p>Welcome to my personal website! I am a software engineer based in San Antonio Texas. Want to know more? Follow me and send me a message!</p>
-    <div>
-        <a href="https://x.com/EvanInTech" target="_blank">𝕏</a>
-        <a href="https://www.linkedin.com/in/evanwilliams75/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/EvanInTech" target="_blank">GitHub</a>
-        <a href="mailto:evan.b.williams95@gmail.com">Email</a>
+<div class="cards-wrapper">
+    <div class="card-container" id="card-container-1">
+        <div class="card front">
+            <h1>Your Name</h1>
+            <p>Welcome to my personal website! Here you'll find links to my social media profiles, and more about what I do.</p>
+            <div>
+                <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+            <a href="Evan_Williams_resume.pdf" download="Evan_Williams_resume.pdf" class="download-link">Download My Resume</a>
+        </div>
+        <div class="card back">
+            <h1>About Me</h1>
+            <p>Hello! I'm Evan Williams, a web developer with a passion for creating interactive and dynamic web experiences. I specialize in front-end development and enjoy bringing ideas to life in the browser.</p>
+        </div>
     </div>
-    <a href="Evan_Williams_resume.pdf" download="Evan_Williams_resume.pdf" class="download-link">Download My Resume</a>
+
+    <div class="card-container" id="card-container-2">
+        <div class="card front">
+            <h1>Project Highlights</h1>
+            <p>Here are some of my favorite projects I've worked on, showcasing my skills in front-end development, design, and more.</p>
+            <div>
+                <a href="https://github.com/yourprofile/project1" target="_blank">Project 1</a>
+                <a href="https://github.com/yourprofile/project2" target="_blank">Project 2</a>
+                <a href="https://github.com/yourprofile/project3" target="_blank">Project 3</a>
+            </div>
+        </div>
+        <div class="card back">
+            <h1>Technologies</h1>
+            <p>I work with a variety of technologies, including HTML, CSS, JavaScript, React, Node.js, and more. I am constantly learning and adapting to new tools and frameworks.</p>
+        </div>
+    </div>
 </div>
+
+<script>
+    document.getElementById('card-container-1').addEventListener('click', function() {
+        this.classList.toggle('flipped');
+    });
+
+    document.getElementById('card-container-2').addEventListener('click', function() {
+        this.classList.toggle('flipped');
+    });
+</script>
 
 </body>
 </html>
