@@ -28,9 +28,6 @@ function App() {
               <a href="https://www.linkedin.com/in/evanwilliams75/" className="hover:text-blue-400 transition-colors">
                 <Linkedin size={24} />
               </a>
-              <a href="https://x.com/EvanInTech" className="hover:text-blue-400 transition-colors">
-                <Twitter size={24} />
-              </a>
               <a href="mailto:evan.b.williams95@gmail.com" className="hover:text-blue-400 transition-colors">
                 <Mail size={24} />
               </a>
