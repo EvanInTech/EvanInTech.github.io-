@@ -19,7 +19,7 @@ function App() {
               Evan Williams
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Software Engineer and Marine Corps Veteran
+              Software Engineer and Marine Corps. Veteran
             </p>
             <div className="flex justify-center gap-4">
               <a href="https://github.com/EvanInTech" className="hover:text-blue-400 transition-colors">
