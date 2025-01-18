@@ -72,7 +72,7 @@ Currently, I focus on backend development with C# in .NET, code reviews, and Jen
               <div className="bg-gray-800 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-4 text-blue-400">Programming Languages</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {['C#', 'JavaScript', 'Python', 'Java'].map((skill) => (
+                  {['C#', 'JavaScript', 'Python', 'Java', 'SQL'].map((skill) => (
                     <div
                       key={skill}
                       className="bg-gray-700 p-3 rounded text-center hover:bg-gray-600 transition-colors"
